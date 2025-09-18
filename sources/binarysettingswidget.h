@@ -12,7 +12,7 @@ class BinarySettingsWidget : public QWidget
 public:
     explicit BinarySettingsWidget(QWidget *parent = nullptr);
 private:
-    QCheckBox *m_CheckAapt2;
+    //QCheckBox *m_CheckAapt2;
     QLineEdit *m_EditAdbExe;
     QLineEdit *m_EditApktoolJar;
     QLineEdit *m_EditJadxExe;

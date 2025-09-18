@@ -422,7 +422,7 @@ void MainWindow::handleActionBuild()
         active = active->parent();
     }
     QSettings settings;
-    auto appt2 = settings.value("use_aapt2", true).toBool();
+    auto appt2 = settings.value("use_aapt2", false).toBool();
     auto thread = new QThread();
     auto worker = new ApkRecompileWorker(active->data(0, Qt::UserRole + 2).toString(), appt2);
     worker->moveToThread(thread);
