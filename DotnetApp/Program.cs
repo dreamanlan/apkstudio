@@ -599,7 +599,7 @@ namespace DotNetLib
         }
         private static void TryLoadDSL()
         {
-            var fi = new FileInfo(Path.Combine(s_BasePath, "Script.dsl"));
+            var fi = new FileInfo(Path.Combine(s_BasePath, "../Script.dsl"));
             if (fi.Exists) {
                 if (fi.LastWriteTime != s_DslScriptTime) {
                     s_DslScriptTime = fi.LastWriteTime;

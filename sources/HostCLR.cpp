@@ -111,7 +111,7 @@ int load_hostfxr()
     hostfxr_initialize_parameters parameters{
         sizeof(hostfxr_initialize_parameters),
         L"./",
-        L"./dotnet/Microsoft.NETCore.App/9.0.2"
+        L"../dotnet/Microsoft.NETCore.App/9.0.2"
     };
 
     hostfxr_handle cxt = nullptr;
@@ -442,7 +442,7 @@ int host_get_java_heap()
 // Function to call .NET Core method
 int load_dotnet_method()
 {
-    const char_t* dotnet_assembly_path = L"./managed/DotnetApp.dll";
+    const char_t* dotnet_assembly_path = L"../managed/DotnetApp.dll";
     const char_t* dotnet_class_name = L"DotNetLib.Lib, DotnetApp";
 
     // native api
