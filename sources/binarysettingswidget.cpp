@@ -69,6 +69,15 @@ QLayout *BinarySettingsWidget::buildForm()
     label->setTextInteractionFlags(Qt::TextBrowserInteraction);
     label->setTextFormat(Qt::RichText);
     layout->addRow("", child);
+    layout->addRow(tr("Zip Align"), m_EditZipAlignExe = new QLineEdit(this));
+    child = new QHBoxLayout();
+    child->addWidget(button = new QPushButton(tr("Browse"), this));
+    connect(button, &QPushButton::pressed, this, &BinarySettingsWidget::handleBrowseZipAlign);
+    child->addWidget(label = new QLabel(QString("<a href=\"https://developer.android.com/studio/releases/build-tools\">%1</a>").arg(tr("Get it here!")), this), 1);
+    label->setOpenExternalLinks(true);
+    label->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    label->setTextFormat(Qt::RichText);
+    layout->addRow("", child);
     QSettings settings;
     auto adb = settings.value("adb_exe").toString();
     if (adb.isEmpty()) {
@@ -86,6 +95,7 @@ QLayout *BinarySettingsWidget::buildForm()
         m_EditJavaExe->setText(java);
     }
     m_EditUberApkSignerJar->setText(settings.value("uas_jar").toString());
+    m_EditZipAlignExe->setText(settings.value("zipalign_exe").toString());
     m_SpinJavaHeap->setValue(ProcessUtils::javaHeapSize());
     return layout;
 }
@@ -166,6 +176,24 @@ void BinarySettingsWidget::handleBrowseUberApkSigner()
     }
 }
 
+void BinarySettingsWidget::handleBrowseZipAlign()
+{
+    const QString path = QFileDialog::getOpenFileName(this,
+#ifdef Q_OS_WIN
+                                                      tr("Browse Zip Align (zipalign.exe)"),
+#else
+                                                      tr("Browse Zip Align"),
+#endif
+                                                      m_EditAdbExe->text()
+#ifdef Q_OS_WIN
+                                                      , tr("Executable File(s) (*.exe)")
+#endif
+                                                      );
+    if (!path.isEmpty()) {
+        m_EditZipAlignExe->setText(QDir::toNativeSeparators(path));
+    }
+}
+
 void BinarySettingsWidget::save()
 {
     QSettings settings;
@@ -175,5 +203,6 @@ void BinarySettingsWidget::save()
     settings.setValue("java_exe", m_EditJavaExe->text());
     settings.setValue("java_heap", m_SpinJavaHeap->value());
     settings.setValue("uas_jar", m_EditUberApkSignerJar->text());
+    settings.setValue("zipalign_exe", m_EditZipAlignExe->text());
     settings.sync();
 }

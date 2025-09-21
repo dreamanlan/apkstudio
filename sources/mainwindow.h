@@ -99,6 +99,8 @@ private slots:
     void handleActionSign();
     void handleActionUndo();
     void handleClipboardDataChanged();
+    void handleOutputLog(const QString &text);
+    void handleProgress(const int percent, const QString &message);
     void handleCommandFinished(const ProcessResult &result);
     void handleCommandStarting(const QString &exe, const QStringList &args);
     void handleCursorPositionChanged();

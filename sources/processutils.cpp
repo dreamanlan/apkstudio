@@ -12,6 +12,16 @@
 
 ProcessOutput* ProcessOutput::m_Self = nullptr;
 
+void ProcessOutput::emitOutputLog(const QString &log)
+{
+    emit outputLog(log);
+}
+
+void ProcessOutput::emitProgress(const int percent, const QString &message)
+{
+    emit progress(percent, message);
+}
+
 void ProcessOutput::emitCommandFinished(const ProcessResult &result)
 {
     emit commandFinished(result);
@@ -131,4 +141,18 @@ QString ProcessUtils::uberApkSignerJar()
     QSettings settings;
     const QString jar = settings.value("uas_jar").toString();
     return (!jar.isEmpty() && QFile::exists(jar)) ? jar : QString();
+}
+
+QString ProcessUtils::zipalignExe()
+{
+    QSettings settings;
+    const QString exe = settings.value("zipalign_exe").toString();
+    if (!exe.isEmpty() && QFile::exists(exe)) {
+        return exe;
+    }
+    QString name("zipalign");
+#ifdef Q_OS_WIN
+    name.append(".exe");
+#endif
+    return findInPath(name);
 }

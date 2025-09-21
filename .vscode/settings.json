@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.dsl": "java",
+        "xstring": "cpp",
+        "atomic": "cpp",
+        "xlocinfo": "cpp",
+        "xlocale": "cpp",
+        "xiosbase": "cpp"
+    }
+}

@@ -50,3 +50,5 @@ compile_commands.json
 /build/release
 build/ApkStudio_resource.rc
 build/.qmake.stash
+/DotnetApp/.vs
+/DotnetApp/obj

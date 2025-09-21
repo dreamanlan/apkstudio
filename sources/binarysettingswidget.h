@@ -18,6 +18,7 @@ private:
     QLineEdit *m_EditJadxExe;
     QLineEdit *m_EditJavaExe;
     QLineEdit *m_EditUberApkSignerJar;
+    QLineEdit *m_EditZipAlignExe;
     QSpinBox *m_SpinJavaHeap;
     QLayout *buildForm();
 private slots:
@@ -26,6 +27,7 @@ private slots:
     void handleBrowseJadx();
     void handleBrowseJava();
     void handleBrowseUberApkSigner();
+    void handleBrowseZipAlign();
 public slots:
     void save();
 };

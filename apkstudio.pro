@@ -28,7 +28,8 @@ HEADERS += \
     sources/sourcecodeedit.h \
     sources/splashwindow.h \
     sources/themedsyntaxhighlighter.h \
-    sources/versionresolveworker.h
+    sources/versionresolveworker.h \
+    sources/HostCLR.h
 
 SOURCES += \
     Qt-Frameless-Window-DarkStyle/DarkStyle.cpp \
@@ -52,7 +53,8 @@ SOURCES += \
     sources/sourcecodeedit.cpp \
     sources/splashwindow.cpp \
     sources/themedsyntaxhighlighter.cpp \
-    sources/versionresolveworker.cpp
+    sources/versionresolveworker.cpp \
+    sources/HostCLR.cpp
 
 RESOURCES += \
     Qt-Frameless-Window-DarkStyle/darkstyle.qrc \

@@ -32,6 +32,7 @@
 #include "settingsdialog.h"
 #include "signingconfigdialog.h"
 #include "sourcecodeedit.h"
+#include "HostCLR.h"
 
 #define COLOR_CODE 0x2ad2c9
 #define COLOR_COMMAND 0xd0d2d3
@@ -41,7 +42,7 @@
 #define IMAGE_EXTENSIONS "gif|jpeg|jpg|png"
 #define TEXT_EXTENSIONS "java|html|properties|smali|txt|xml|yaml|yml"
 
-#define URL_CONTRIBUTE "https://github.com/vaibhavpandeyvpz/apkstudio"
+#define URL_CONTRIBUTE "https://github.com/dreamanlan/apkstudio"
 #define URL_DOCUMENTATION "https://vaibhavpandey.com/apkstudio/"
 #define URL_ISSUES "https://github.com/vaibhavpandeyvpz/apkstudio/issues"
 #define URL_THANKS "https://forum.xda-developers.com/showthread.php?t=2493107"
@@ -60,7 +61,7 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
     setMenuBar(buildMenuBar());
     setMinimumSize(WINDOW_WIDTH, WINDOW_HEIGHT);
     setStatusBar(buildStatusBar(versions));
-    setWindowTitle(tr("APK Studio").append(" - https://vaibhavpandey.com/apkstudio/"));
+    setWindowTitle(tr("APK Studio").append(" - https://github.com/dreamanlan/apkstudio"));
     connect(QApplication::clipboard(), &QClipboard::dataChanged, this, &MainWindow::handleClipboardDataChanged);
     QSettings settings;
     const bool dark = settings.value("dark_theme", false).toBool();
@@ -90,20 +91,29 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
             }
         }
         bool missing = false;
+        QString missingBinary;
+        add_log(tr("3rd-party binaries:"));
         foreach (const QString &binary, versions.keys()) {
-            if (versions[binary].isEmpty()) {
+            const QString &ver = versions.value(binary);
+            if (ver.isEmpty()) {
 #ifdef QT_DEBUG
                 qDebug() << binary << "is missing";
 #endif
-                missing = true;
-                break;
+                if (!missing) {
+                    missing = true;
+                    missingBinary = binary;
+                }
+                add_log(tr("\tbinary %1 is missing").arg(binary));
+            }
+            else {
+                add_log(tr("\t%1: %2").arg(binary, ver));
             }
         }
         if (missing) {
             int btn = QMessageBox::information(
                         this,
                         tr("Requirements"),
-                        tr("One or more required 3rd-party binaries are missing. Please review settings first."),
+                        tr("One or more required 3rd-party binaries are missing. Please review settings first. (%1)").arg(missingBinary),
                         tr("Settings"),
                         tr("Cancel"));
             if (btn == 0) {
@@ -111,6 +121,21 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
             }
         }
     });
+
+    int r = load_hostfxr();
+    if (r != 0) {
+        QMessageBox::information(this, "Error", QString("Failed to load hostfxr: %1").arg(r));
+        return;
+    }
+    load_dotnet_method();
+
+    if (init_csharp_fptr) {
+        QString exePath = QCoreApplication::applicationFilePath();
+        QString absDir = QFileInfo(exePath).absolutePath();
+        std::string base_path = absDir.toStdString();
+        ProcessResult result{};
+        init_csharp_fptr(base_path.c_str(), &result);
+    }
 }
 
 QWidget *MainWindow::buildCentralWidget()
@@ -158,6 +183,8 @@ QDockWidget *MainWindow::buildConsoleDock()
     m_EditConsole->setReadOnly(true);
     m_EditConsole->setTabStopWidth(4 * metrics.width('8'));
     m_EditConsole->setWordWrapMode(QTextOption::NoWrap);
+    connect(ProcessOutput::instance(), &ProcessOutput::outputLog, this, &MainWindow::handleOutputLog);
+    connect(ProcessOutput::instance(), &ProcessOutput::progress, this, &MainWindow::handleProgress);
     connect(ProcessOutput::instance(), &ProcessOutput::commandFinished, this, &MainWindow::handleCommandFinished);
     connect(ProcessOutput::instance(), &ProcessOutput::commandStarting, this, &MainWindow::handleCommandStarting);
     setContentsMargins(2, 2, 2, 2);
@@ -661,6 +688,18 @@ void MainWindow::handleClipboardDataChanged()
     if (edit) {
         m_ActionPaste->setEnabled(edit && edit->canPaste());
     }
+}
+
+void MainWindow::handleOutputLog(const QString &text)
+{
+    m_EditConsole->setTextColor(QColor(COLOR_OUTPUT));
+    m_EditConsole->append(text);
+}
+
+void MainWindow::handleProgress(const int percent, const QString &message)
+{
+    m_ProgressDialog->setLabelText(message);
+    m_ProgressDialog->setValue(percent);
 }
 
 void MainWindow::handleCommandFinished(const ProcessResult &result)
