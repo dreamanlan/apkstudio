@@ -122,6 +122,12 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
         }
     });
 
+    QString exePath = QCoreApplication::applicationFilePath();
+    QString absDir = QFileInfo(exePath).absolutePath();
+    std::string base_path = absDir.toStdString();
+    QCoreApplication::addLibraryPath(absDir);
+    QDir::setCurrent(absDir);
+
     int r = load_hostfxr();
     if (r != 0) {
         QMessageBox::information(this, "Error", QString("Failed to load hostfxr: %1").arg(r));
@@ -130,9 +136,6 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
     load_dotnet_method();
 
     if (init_csharp_fptr) {
-        QString exePath = QCoreApplication::applicationFilePath();
-        QString absDir = QFileInfo(exePath).absolutePath();
-        std::string base_path = absDir.toStdString();
         ProcessResult result{};
         init_csharp_fptr(base_path.c_str(), &result);
     }

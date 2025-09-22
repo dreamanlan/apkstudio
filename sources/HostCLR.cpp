@@ -117,7 +117,7 @@ int load_hostfxr()
     hostfxr_handle cxt = nullptr;
     int rc = init_config_fptr(L"dotnetapp.runtimeconfig.json", &parameters, &cxt);
     //int argc = 1;
-    //const char_t* argv[] = { L"./managed/dotnetapp.dll" };
+    //const char_t* argv[] = { L"../managed/dotnetapp.dll" };
     //int rc = init_cmdline_fptr(argc, argv, &parameters, &cxt);
     if (rc != 0 || cxt == nullptr)
     {
