@@ -129,4 +129,5 @@ DEFINES += GIT_BRANCH=\\\"$$GIT_BRANCH\\\" \
 
 win32-msvc {
     QMAKE_LFLAGS += /STACK:20000000
+    LIBS += "../sources/coreclr/nethost.lib"
 }

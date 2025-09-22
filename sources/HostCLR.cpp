@@ -25,10 +25,62 @@
 #endif
 #endif
 
+#if defined(_MSC_VER)
+static std::string WideStringToUtf8(const wchar_t* wstr)
+{
+    if (!wstr) return std::string();
+
+    int size_needed = ::WideCharToMultiByte(CP_UTF8, 0, wstr, -1, nullptr, 0, nullptr, nullptr);
+    if (size_needed == 0) {
+        return std::string();
+    }
+
+    std::string result;
+    result.resize(size_needed - 1);
+    ::WideCharToMultiByte(CP_UTF8, 0, wstr, -1, &result[0], size_needed, nullptr, nullptr);
+    return result;
+}
+static std::wstring Utf8ToWstring(const char* str)
+{
+    if (!str) return std::wstring();
+    int size_needed = ::MultiByteToWideChar(CP_UTF8, 0, str, -1, nullptr, 0);
+    if (size_needed == 0) {
+        return std::wstring();
+    }
+
+    std::wstring wstr;
+    wstr.resize(size_needed);
+    ::MultiByteToWideChar(CP_UTF8, 0, str, -1, &wstr[0], size_needed);
+
+    if (!wstr.empty()) wstr.pop_back();
+    return wstr;
+}
+bool WideToUtf8ToBuffer(const wchar_t* wstr, char* buf, int bufSize)
+{
+    if (!wstr || !buf || bufSize <= 0) return false;
+    int needed = ::WideCharToMultiByte(CP_UTF8, 0, wstr, -1, nullptr, 0, nullptr, nullptr);
+    if (needed == 0 || needed > bufSize) return false;
+    ::WideCharToMultiByte(CP_UTF8, 0, wstr, -1, buf, needed, nullptr, nullptr);
+    return true;
+}
+bool MultiByteToWideBuffer(const char* src, wchar_t* buf, int bufSize, UINT codePage = CP_UTF8)
+{
+    if (!src || !buf || bufSize <= 0) return false;
+    int needed = ::MultiByteToWideChar(codePage, 0, src, -1, nullptr, 0);
+    if (needed == 0 || needed > bufSize) return false;
+    int ret = ::MultiByteToWideChar(codePage, 0, src, -1, buf, bufSize);
+    return ret != 0;
+}
+#endif
+
 void* load_library(const char* path)
 {
 #if defined(_MSC_VER)
-    HMODULE h = ::LoadLibraryA(path);
+    //HMODULE h = ::LoadLibraryA(path);
+    //return reinterpret_cast<void*>(h);
+    wchar_t wpath[1025];
+    MultiByteToWideBuffer(path, wpath, 1024);
+    HMODULE h = LoadLibraryW(wpath);
     return reinterpret_cast<void*>(h);
 #else
     return dlopen(path, RTLD_LAZY | RTLD_LOCAL);
@@ -87,26 +139,66 @@ static load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_
 // Function to initialize .NET Core runtime
 int load_hostfxr()
 {
+#ifdef USE_SPEC_DOTNET
+    // Load hostfxr.dll and use dotnet framework in specific directory
     const char* hostfxr_path = "hostfxr.dll";
-    void* lib = load_library(hostfxr_path);
-    if (!lib)
+    void* hostfxr_lib = load_library(hostfxr_path);
+    if (!hostfxr_lib)
     {
         printf_log("Failed to load hostfxr.dll");
+        return -2;
+    }
+#else
+#ifdef _WIN32
+    wchar_t hostfxr_path_w[1024];
+    size_t sz = sizeof(hostfxr_path_w) / sizeof(wchar_t);
+    int rc0 = get_hostfxr_path(hostfxr_path_w, &sz, nullptr);
+    if (rc0 != 0) {
+        printf_log("get_hostfxr_path failed: %d", rc0);
         return -1;
     }
+    char path[1025];
+    WideToUtf8ToBuffer(hostfxr_path_w, path, 1024);
+    printf_log("[native] hostfxr path: %s\n", path);
+#else
+    char hostfxr_path[PATH_MAX];
+    size_t sz = sizeof(hostfxr_path);
+    int rc0 = get_hostfxr_path(hostfxr_path, &sz, nullptr);
+    if (rc0 != 0) {
+        printf_log("get_hostfxr_path failed: %d", rc0);
+        return -1;
+    }
+    printf("[native] hostfxr path: %s\n", hostfxr_path);
+#endif
 
-    auto init_cmdline_fptr = reinterpret_cast<hostfxr_initialize_for_dotnet_command_line_fn>(get_export(lib, "hostfxr_initialize_for_dotnet_command_line"));
-    auto run_app_fptr = reinterpret_cast<hostfxr_run_app_fn>(get_export(lib, "hostfxr_run_app"));
-    auto init_config_fptr = reinterpret_cast<hostfxr_initialize_for_runtime_config_fn>(get_export(lib, "hostfxr_initialize_for_runtime_config"));
-    auto get_delegate_fptr = reinterpret_cast<hostfxr_get_runtime_delegate_fn>(get_export(lib, "hostfxr_get_runtime_delegate"));
-    auto close_fptr = reinterpret_cast<hostfxr_close_fn>(get_export(lib, "hostfxr_close"));
+#ifdef _WIN32
+    HMODULE hostfxr_lib = LoadLibraryW(hostfxr_path_w);
+    if (!hostfxr_lib) {
+        printf_log("LoadLibraryW failed\n");
+        return -2;
+    }
+#else
+    void* hostfxr_lib = load_library(hostfxr_path);
+    if (!hostfxr_lib) {
+        return -2;
+    }
+#endif
+
+#endif
+
+    auto init_cmdline_fptr = reinterpret_cast<hostfxr_initialize_for_dotnet_command_line_fn>(get_export(hostfxr_lib, "hostfxr_initialize_for_dotnet_command_line"));
+    auto run_app_fptr = reinterpret_cast<hostfxr_run_app_fn>(get_export(hostfxr_lib, "hostfxr_run_app"));
+    auto init_config_fptr = reinterpret_cast<hostfxr_initialize_for_runtime_config_fn>(get_export(hostfxr_lib, "hostfxr_initialize_for_runtime_config"));
+    auto get_delegate_fptr = reinterpret_cast<hostfxr_get_runtime_delegate_fn>(get_export(hostfxr_lib, "hostfxr_get_runtime_delegate"));
+    auto close_fptr = reinterpret_cast<hostfxr_close_fn>(get_export(hostfxr_lib, "hostfxr_close"));
 
     if (!init_cmdline_fptr || !run_app_fptr || !init_config_fptr || !get_delegate_fptr || !close_fptr)
     {
         printf_log("Failed to get hostfxr functions");
-        return -2;
+        return -3;
     }
 
+#ifdef USE_SEPC_DOTNET
     // Initialize the .NET Core runtime
     hostfxr_initialize_parameters parameters{
         sizeof(hostfxr_initialize_parameters),
@@ -116,13 +208,17 @@ int load_hostfxr()
 
     hostfxr_handle cxt = nullptr;
     int rc = init_config_fptr(L"../managed/dotnetapp.runtimeconfig.json", &parameters, &cxt);
+#else
+    hostfxr_handle cxt = nullptr;
+    int rc = init_config_fptr(L"../managed/dotnetapp.runtimeconfig.json", nullptr, &cxt);
+#endif
     //int argc = 1;
     //const char_t* argv[] = { L"../managed/dotnetapp.dll" };
     //int rc = init_cmdline_fptr(argc, argv, &parameters, &cxt);
     if (rc != 0 || cxt == nullptr)
     {
         printf_log("Failed to initialize .NET Core runtime");
-        return -3;
+        return -4;
     }
 
     // Get the delegate for the runtime
@@ -130,7 +226,7 @@ int load_hostfxr()
     if (rc != 0 || load_assembly_and_get_function_pointer == nullptr)
     {
         printf_log("Failed to get load_assembly_and_get_function_pointer");
-        return -4;
+        return -5;
     }
 
     //run_app_fptr(cxt);
