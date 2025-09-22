@@ -109,8 +109,15 @@ bool FlickCharm::eventFilter(QObject *object, QEvent *event)
         if (mouseEvent->type() == QEvent::MouseButtonRelease) {
             consumed = true;
             data->state = FlickData::Steady;
-            QMouseEvent *event1 = new QMouseEvent(QEvent::MouseButtonPress, data->pressPos, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
-            QMouseEvent *event2 = new QMouseEvent(*mouseEvent);
+            QMouseEvent *event1 = new QMouseEvent(QEvent::MouseButtonPress, data->pressPos, mouseEvent->globalPosition(), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+            const QMouseEvent& e = *mouseEvent;
+            QMouseEvent *event2 = new QMouseEvent(e.type(),
+                e.position(),
+                e.globalPosition(),
+                e.scenePosition(),
+                e.button(),
+                e.buttons(),
+                e.modifiers());
             data->ignored << event1;
             data->ignored << event2;
             QApplication::postEvent(object, event1);

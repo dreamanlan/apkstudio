@@ -5,7 +5,6 @@
 #include <QProcessEnvironment>
 #include <QRegularExpression>
 #include <QSettings>
-#include <QTextCodec>
 #include "processutils.h"
 
 #define REGEXP_CRLF "[\\r\\n]"
@@ -127,8 +126,8 @@ ProcessResult ProcessUtils::runCommand(const QString &exe, const QStringList &ar
         QString error(process.readAllStandardError());
         QString output(process.readAllStandardOutput());
         QRegularExpression crlf(REGEXP_CRLF);
-        result.error = error.split(crlf, QString::SkipEmptyParts);
-        result.output = output.split(crlf, QString::SkipEmptyParts);
+        result.error = error.split(crlf, Qt::SkipEmptyParts);
+        result.output = output.split(crlf, Qt::SkipEmptyParts);
     } else {
         result.code = -1;
     }

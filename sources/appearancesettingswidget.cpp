@@ -60,8 +60,8 @@ void AppearanceSettingsWidget::save()
         int btn = QMessageBox::information(this,
                                            tr("Theme"),
                                            tr("Changes to app theme will be applied only when you restart APK studio."),
-                                           tr("Restart"),
-                                           tr("OK"));
+                                           QMessageBox::Yes,
+                                           QMessageBox::No);
         if (btn == 0) {
             QApplication::exit(CODE_RESTART);
         }

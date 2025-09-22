@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F2D5EDCE-3108-38E7-891D-141584B49B51}</ProjectGuid>
+    <RootNamespace>ApkStudio</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.26100.0</WindowsTargetPlatformMinVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>ApkStudio</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>ApkStudio</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ApkStudio</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ApkStudio</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\apkstudio;.;..\QHexView\include;..\..\..\Qt\6.9.2\msvc2022_64\include;..\..\..\Qt\6.9.2\msvc2022_64\include\QtWidgets;..\..\..\Qt\6.9.2\msvc2022_64\include\QtGui;..\..\..\Qt\6.9.2\msvc2022_64\include\QtCore;release;C:\VulkanSDK\1.4.321.1\include;..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QHEXVIEW_ENABLE_DIALOGS=1;GIT_BRANCH="master";GIT_COMMIT_FULL="d9cbe864bc4f51fa713098bf5dee28d9924e9a24";GIT_COMMIT_NUMBER="305";GIT_COMMIT_SHORT="d9cbe86";GIT_TAG="";NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>D:\Qt\6.9.2\msvc2022_64\lib\Qt6Widgets.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6Gui.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6Core.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\ApkStudio.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <StackReserveSize>20000000</StackReserveSize>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QHEXVIEW_ENABLE_DIALOGS=1;GIT_BRANCH=\"master\";GIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\";GIT_COMMIT_NUMBER=\"305\";GIT_COMMIT_SHORT=\"d9cbe86\";GIT_TAG=\"\";NDEBUG;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\apkstudio;.;..\QHexView\include;..\..\..\Qt\6.9.2\msvc2022_64\include;..\..\..\Qt\6.9.2\msvc2022_64\include\QtWidgets;..\..\..\Qt\6.9.2\msvc2022_64\include\QtGui;..\..\..\Qt\6.9.2\msvc2022_64\include\QtCore;debug;C:\VulkanSDK\1.4.321.1\include;..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QHEXVIEW_ENABLE_DIALOGS=1;GIT_BRANCH="master";GIT_COMMIT_FULL="d9cbe864bc4f51fa713098bf5dee28d9924e9a24";GIT_COMMIT_NUMBER="305";GIT_COMMIT_SHORT="d9cbe86";GIT_TAG="";QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>D:\Qt\6.9.2\msvc2022_64\lib\Qt6Widgetsd.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6Guid.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6Cored.lib;D:\Qt\6.9.2\msvc2022_64\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\ApkStudio.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <StackReserveSize>20000000</StackReserveSize>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QHEXVIEW_ENABLE_DIALOGS=1;GIT_BRANCH=\"master\";GIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\";GIT_COMMIT_NUMBER=\"305\";GIT_COMMIT_SHORT=\"d9cbe86\";GIT_TAG=\"\";QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Qt-Frameless-Window-DarkStyle\DarkStyle.cpp" />
+    <ClCompile Include="..\sources\HostCLR.cpp" />
+    <ClCompile Include="..\sources\adbinstallworker.cpp" />
+    <ClCompile Include="..\sources\apkdecompiledialog.cpp" />
+    <ClCompile Include="..\sources\apkdecompileworker.cpp" />
+    <ClCompile Include="..\sources\apkrecompileworker.cpp" />
+    <ClCompile Include="..\sources\apksignworker.cpp" />
+    <ClCompile Include="..\sources\appearancesettingswidget.cpp" />
+    <ClCompile Include="..\sources\binarysettingswidget.cpp" />
+    <ClCompile Include="..\sources\findreplacedialog.cpp" />
+    <ClCompile Include="..\sources\flickcharm.cpp" />
+    <ClCompile Include="..\QHexView\src\model\commands\hexcommand.cpp" />
+    <ClCompile Include="..\sources\hexedit.cpp" />
+    <ClCompile Include="..\QHexView\src\dialogs\hexfinddialog.cpp" />
+    <ClCompile Include="..\sources\imageviewerwidget.cpp" />
+    <ClCompile Include="..\QHexView\src\model\commands\insertcommand.cpp" />
+    <ClCompile Include="..\sources\main.cpp" />
+    <ClCompile Include="..\sources\mainwindow.cpp" />
+    <ClCompile Include="..\sources\processutils.cpp" />
+    <ClCompile Include="..\QHexView\src\model\buffer\qdevicebuffer.cpp" />
+    <ClCompile Include="..\QHexView\src\model\buffer\qhexbuffer.cpp" />
+    <ClCompile Include="..\QHexView\src\model\qhexcursor.cpp" />
+    <ClCompile Include="..\QHexView\src\model\qhexdelegate.cpp" />
+    <ClCompile Include="..\QHexView\src\model\qhexdocument.cpp" />
+    <ClCompile Include="..\QHexView\src\model\qhexmetadata.cpp" />
+    <ClCompile Include="..\QHexView\src\model\qhexutils.cpp" />
+    <ClCompile Include="..\QHexView\src\qhexview.cpp" />
+    <ClCompile Include="..\QHexView\src\model\buffer\qmappedfilebuffer.cpp" />
+    <ClCompile Include="..\QHexView\src\model\buffer\qmemorybuffer.cpp" />
+    <ClCompile Include="..\QHexView\src\model\buffer\qmemoryrefbuffer.cpp" />
+    <ClCompile Include="..\QHexView\src\model\commands\removecommand.cpp" />
+    <ClCompile Include="..\QHexView\src\model\commands\replacecommand.cpp" />
+    <ClCompile Include="..\sources\settingsdialog.cpp" />
+    <ClCompile Include="..\sources\signingconfigdialog.cpp" />
+    <ClCompile Include="..\sources\signingconfigwidget.cpp" />
+    <ClCompile Include="..\sources\sourcecodeedit.cpp" />
+    <ClCompile Include="..\sources\splashwindow.cpp" />
+    <ClCompile Include="..\sources\themedsyntaxhighlighter.cpp" />
+    <ClCompile Include="..\sources\versionresolveworker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Qt-Frameless-Window-DarkStyle\DarkStyle.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Qt-Frameless-Window-DarkStyle\DarkStyle.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\Qt-Frameless-Window-DarkStyle\DarkStyle.h -o release\moc_DarkStyle.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../Qt-Frameless-Window-DarkStyle/DarkStyle.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_DarkStyle.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Qt-Frameless-Window-DarkStyle\DarkStyle.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\Qt-Frameless-Window-DarkStyle\DarkStyle.h -o debug\moc_DarkStyle.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../Qt-Frameless-Window-DarkStyle/DarkStyle.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_DarkStyle.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\sources\HostCLR.h" />
+    <CustomBuild Include="..\sources\adbinstallworker.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\adbinstallworker.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\adbinstallworker.h -o release\moc_adbinstallworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/adbinstallworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_adbinstallworker.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\adbinstallworker.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\adbinstallworker.h -o debug\moc_adbinstallworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/adbinstallworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_adbinstallworker.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\apkdecompiledialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\apkdecompiledialog.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkdecompiledialog.h -o release\moc_apkdecompiledialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/apkdecompiledialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_apkdecompiledialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\apkdecompiledialog.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkdecompiledialog.h -o debug\moc_apkdecompiledialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/apkdecompiledialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_apkdecompiledialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\apkdecompileworker.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\apkdecompileworker.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkdecompileworker.h -o release\moc_apkdecompileworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/apkdecompileworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_apkdecompileworker.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\apkdecompileworker.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkdecompileworker.h -o debug\moc_apkdecompileworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/apkdecompileworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_apkdecompileworker.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\apkrecompileworker.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\apkrecompileworker.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkrecompileworker.h -o release\moc_apkrecompileworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/apkrecompileworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_apkrecompileworker.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\apkrecompileworker.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apkrecompileworker.h -o debug\moc_apkrecompileworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/apkrecompileworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_apkrecompileworker.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\apksignworker.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\apksignworker.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apksignworker.h -o release\moc_apksignworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/apksignworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_apksignworker.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\apksignworker.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\apksignworker.h -o debug\moc_apksignworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/apksignworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_apksignworker.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\appearancesettingswidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\appearancesettingswidget.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\appearancesettingswidget.h -o release\moc_appearancesettingswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/appearancesettingswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_appearancesettingswidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\appearancesettingswidget.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\appearancesettingswidget.h -o debug\moc_appearancesettingswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/appearancesettingswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_appearancesettingswidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\binarysettingswidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\binarysettingswidget.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\binarysettingswidget.h -o release\moc_binarysettingswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/binarysettingswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_binarysettingswidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\binarysettingswidget.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\binarysettingswidget.h -o debug\moc_binarysettingswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/binarysettingswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_binarysettingswidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\findreplacedialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\findreplacedialog.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\findreplacedialog.h -o release\moc_findreplacedialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/findreplacedialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_findreplacedialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\findreplacedialog.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\findreplacedialog.h -o debug\moc_findreplacedialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/findreplacedialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_findreplacedialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\flickcharm.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\flickcharm.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\flickcharm.h -o release\moc_flickcharm.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/flickcharm.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_flickcharm.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\flickcharm.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\flickcharm.h -o debug\moc_flickcharm.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/flickcharm.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_flickcharm.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\QHexView\include\QHexView\model\commands\hexcommand.h" />
+    <CustomBuild Include="..\sources\hexedit.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\hexedit.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\hexedit.h -o release\moc_hexedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/hexedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_hexedit.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\hexedit.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\hexedit.h -o debug\moc_hexedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/hexedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_hexedit.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\dialogs\hexfinddialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\dialogs\hexfinddialog.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\dialogs\hexfinddialog.h -o release\moc_hexfinddialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/dialogs/hexfinddialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_hexfinddialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\dialogs\hexfinddialog.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\dialogs\hexfinddialog.h -o debug\moc_hexfinddialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/dialogs/hexfinddialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_hexfinddialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\imageviewerwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\imageviewerwidget.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\imageviewerwidget.h -o release\moc_imageviewerwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/imageviewerwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_imageviewerwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\imageviewerwidget.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\imageviewerwidget.h -o debug\moc_imageviewerwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/imageviewerwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_imageviewerwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\QHexView\include\QHexView\model\commands\insertcommand.h" />
+    <CustomBuild Include="..\sources\mainwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\mainwindow.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\mainwindow.h -o release\moc_mainwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/mainwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_mainwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\mainwindow.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\mainwindow.h -o debug\moc_mainwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/mainwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_mainwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\processutils.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\processutils.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\processutils.h -o release\moc_processutils.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/processutils.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_processutils.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\processutils.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\processutils.h -o debug\moc_processutils.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/processutils.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_processutils.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\buffer\qdevicebuffer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\buffer\qdevicebuffer.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qdevicebuffer.h -o release\moc_qdevicebuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/buffer/qdevicebuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qdevicebuffer.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\buffer\qdevicebuffer.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qdevicebuffer.h -o debug\moc_qdevicebuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/buffer/qdevicebuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qdevicebuffer.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\buffer\qhexbuffer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\buffer\qhexbuffer.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qhexbuffer.h -o release\moc_qhexbuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/buffer/qhexbuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexbuffer.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\buffer\qhexbuffer.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qhexbuffer.h -o debug\moc_qhexbuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/buffer/qhexbuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexbuffer.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\qhexcursor.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\qhexcursor.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexcursor.h -o release\moc_qhexcursor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/qhexcursor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexcursor.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\qhexcursor.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexcursor.h -o debug\moc_qhexcursor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/qhexcursor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexcursor.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\qhexdelegate.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\qhexdelegate.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexdelegate.h -o release\moc_qhexdelegate.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/qhexdelegate.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexdelegate.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\qhexdelegate.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexdelegate.h -o debug\moc_qhexdelegate.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/qhexdelegate.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexdelegate.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\qhexdocument.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\qhexdocument.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexdocument.h -o release\moc_qhexdocument.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/qhexdocument.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexdocument.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\qhexdocument.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexdocument.h -o debug\moc_qhexdocument.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/qhexdocument.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexdocument.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\qhexmetadata.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\qhexmetadata.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexmetadata.h -o release\moc_qhexmetadata.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/qhexmetadata.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexmetadata.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\qhexmetadata.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\qhexmetadata.h -o debug\moc_qhexmetadata.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/qhexmetadata.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexmetadata.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\QHexView\include\QHexView\model\qhexoptions.h" />
+    <ClInclude Include="..\QHexView\include\QHexView\model\qhexutils.h" />
+    <CustomBuild Include="..\QHexView\include\QHexView\qhexview.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\qhexview.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\qhexview.h -o release\moc_qhexview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/qhexview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qhexview.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\qhexview.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\qhexview.h -o debug\moc_qhexview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/qhexview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qhexview.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\QHexView\include\QHexView\model\buffer\qmappedfilebuffer.h" />
+    <CustomBuild Include="..\QHexView\include\QHexView\model\buffer\qmemorybuffer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\buffer\qmemorybuffer.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qmemorybuffer.h -o release\moc_qmemorybuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/buffer/qmemorybuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qmemorybuffer.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\buffer\qmemorybuffer.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qmemorybuffer.h -o debug\moc_qmemorybuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/buffer/qmemorybuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qmemorybuffer.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\QHexView\include\QHexView\model\buffer\qmemoryrefbuffer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\QHexView\include\QHexView\model\buffer\qmemoryrefbuffer.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qmemoryrefbuffer.h -o release\moc_qmemoryrefbuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../QHexView/include/QHexView/model/buffer/qmemoryrefbuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_qmemoryrefbuffer.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\QHexView\include\QHexView\model\buffer\qmemoryrefbuffer.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\QHexView\include\QHexView\model\buffer\qmemoryrefbuffer.h -o debug\moc_qmemoryrefbuffer.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../QHexView/include/QHexView/model/buffer/qmemoryrefbuffer.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_qmemoryrefbuffer.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\QHexView\include\QHexView\model\commands\removecommand.h" />
+    <ClInclude Include="..\QHexView\include\QHexView\model\commands\replacecommand.h" />
+    <CustomBuild Include="..\sources\settingsdialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\settingsdialog.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\settingsdialog.h -o release\moc_settingsdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/settingsdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_settingsdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\settingsdialog.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\settingsdialog.h -o debug\moc_settingsdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/settingsdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_settingsdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\signingconfigdialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\signingconfigdialog.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\signingconfigdialog.h -o release\moc_signingconfigdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/signingconfigdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_signingconfigdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\signingconfigdialog.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\signingconfigdialog.h -o debug\moc_signingconfigdialog.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/signingconfigdialog.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_signingconfigdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\signingconfigwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\signingconfigwidget.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\signingconfigwidget.h -o release\moc_signingconfigwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/signingconfigwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_signingconfigwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\signingconfigwidget.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\signingconfigwidget.h -o debug\moc_signingconfigwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/signingconfigwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_signingconfigwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\sourcecodeedit.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\sourcecodeedit.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\sourcecodeedit.h -o release\moc_sourcecodeedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/sourcecodeedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_sourcecodeedit.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\sourcecodeedit.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\sourcecodeedit.h -o debug\moc_sourcecodeedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/sourcecodeedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_sourcecodeedit.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\sources\splashwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\splashwindow.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\splashwindow.h -o release\moc_splashwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/splashwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_splashwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\splashwindow.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\splashwindow.h -o debug\moc_splashwindow.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/splashwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_splashwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\sources\themedsyntaxhighlighter.h" />
+    <CustomBuild Include="..\sources\versionresolveworker.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sources\versionresolveworker.h;release\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/release/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\versionresolveworker.h -o release\moc_versionresolveworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC ../sources/versionresolveworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_versionresolveworker.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\sources\versionresolveworker.h;debug\moc_predefs.h;D:\Qt\6.9.2\msvc2022_64\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQHEXVIEW_ENABLE_DIALOGS=1 -DGIT_BRANCH=\"master\" -DGIT_COMMIT_FULL=\"d9cbe864bc4f51fa713098bf5dee28d9924e9a24\" -DGIT_COMMIT_NUMBER=\"305\" -DGIT_COMMIT_SHORT=\"d9cbe86\" -DGIT_TAG=\"\" -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include D:/GitHub/apkstudio/build/debug/moc_predefs.h -ID:/Qt/6.9.2/msvc2022_64/mkspecs/win32-msvc -ID:/GitHub/apkstudio -ID:/GitHub/apkstudio/QHexView/include -ID:/Qt/6.9.2/msvc2022_64/include -ID:/Qt/6.9.2/msvc2022_64/include/QtWidgets -ID:/Qt/6.9.2/msvc2022_64/include/QtGui -ID:/Qt/6.9.2/msvc2022_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\cppwinrt" ..\sources\versionresolveworker.h -o debug\moc_versionresolveworker.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC ../sources/versionresolveworker.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_versionresolveworker.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debug\moc_DarkStyle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_DarkStyle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_adbinstallworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_adbinstallworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_apkdecompiledialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_apkdecompiledialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_apkdecompileworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_apkdecompileworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_apkrecompileworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_apkrecompileworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_apksignworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_apksignworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_appearancesettingswidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_appearancesettingswidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_binarysettingswidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_binarysettingswidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_findreplacedialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_findreplacedialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_flickcharm.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_flickcharm.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_hexedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_hexedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_hexfinddialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_hexfinddialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_imageviewerwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_imageviewerwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -BxD:\Qt\6.9.2\msvc2022_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -BxD:\Qt\6.9.2\msvc2022_64\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E ..\..\..\Qt\6.9.2\msvc2022_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClCompile Include="debug\moc_processutils.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_processutils.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qdevicebuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qdevicebuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexbuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexbuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexcursor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexcursor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexdelegate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexdelegate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexdocument.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexdocument.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexmetadata.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexmetadata.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qhexview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qhexview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qmemorybuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qmemorybuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_qmemoryrefbuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_qmemoryrefbuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_settingsdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_settingsdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_signingconfigdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_signingconfigdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_signingconfigwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_signingconfigwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_sourcecodeedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_sourcecodeedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_splashwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_splashwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_versionresolveworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_versionresolveworker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_all.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_all.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_darkstyle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_darkstyle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\resources\about.html" />
+    <CustomBuild Include="..\resources\all.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\resources\all.qrc;D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe;..\resources\about.html;..\resources\checkerboard.png;..\resources\splash.png;..\resources\icon.png;..\resources\light.theme;..\resources\dark.theme;..\resources\properties.def;..\resources\yml.def;..\resources\numbers.def;..\resources\yaml.def;..\resources\smali.def;..\resources\html.def;..\resources\xml.def;..\resources\strings.def;..\resources\java.def;..\resources\dark.qss;..\resources\light.qss;..\resources\icon.ico;..\resources\icons8\icons8-gear-48.png;..\resources\icons8\icons8-hammer-48.png;..\resources\icons8\icons8-android-os-48.png;..\resources\icons8\icons8-folder-48.png;..\resources\icons8\icons8-software-installer-48.png;..\resources\fugue\binocular.png;..\resources\fugue\android.png;..\resources\fugue\edit-signiture.png;..\resources\fugue\color.png;..\resources\fugue\gear.png;..\resources\fugue\edit-replace.png;..\resources\fugue\application-terminal.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe -name all --no-zstd ..\resources\all.qrc -o release\qrc_all.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC ../resources/all.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_all.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\resources\all.qrc;D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe;..\resources\about.html;..\resources\checkerboard.png;..\resources\splash.png;..\resources\icon.png;..\resources\light.theme;..\resources\dark.theme;..\resources\properties.def;..\resources\yml.def;..\resources\numbers.def;..\resources\yaml.def;..\resources\smali.def;..\resources\html.def;..\resources\xml.def;..\resources\strings.def;..\resources\java.def;..\resources\dark.qss;..\resources\light.qss;..\resources\icon.ico;..\resources\icons8\icons8-gear-48.png;..\resources\icons8\icons8-hammer-48.png;..\resources\icons8\icons8-android-os-48.png;..\resources\icons8\icons8-folder-48.png;..\resources\icons8\icons8-software-installer-48.png;..\resources\fugue\binocular.png;..\resources\fugue\android.png;..\resources\fugue\edit-signiture.png;..\resources\fugue\color.png;..\resources\fugue\gear.png;..\resources\fugue\edit-replace.png;..\resources\fugue\application-terminal.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe -name all --no-zstd ..\resources\all.qrc -o debug\qrc_all.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC ../resources/all.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_all.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\resources\fugue\android.png" />
+    <None Include="..\resources\fugue\application-terminal.png" />
+    <None Include="..\resources\fugue\binocular.png" />
+    <None Include="..\resources\checkerboard.png" />
+    <None Include="..\resources\fugue\color.png" />
+    <None Include="..\resources\dark.qss" />
+    <None Include="..\resources\dark.theme" />
+    <CustomBuild Include="..\Qt-Frameless-Window-DarkStyle\darkstyle.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Qt-Frameless-Window-DarkStyle\darkstyle.qrc;D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_end.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_undock.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_open.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_restore.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\darkstyle.qss;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_more.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_vline.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_closed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_close.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe -name darkstyle --no-zstd ..\Qt-Frameless-Window-DarkStyle\darkstyle.qrc -o release\qrc_darkstyle.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC ../Qt-Frameless-Window-DarkStyle/darkstyle.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_darkstyle.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Qt-Frameless-Window-DarkStyle\darkstyle.qrc;D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_end.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_undock.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_open.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_restore.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\darkstyle.qss;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_more.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_disabled.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_vline.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_pressed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_closed.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_close.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked.png;..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.9.2\msvc2022_64\bin\rcc.exe -name darkstyle --no-zstd ..\Qt-Frameless-Window-DarkStyle\darkstyle.qrc -o debug\qrc_darkstyle.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC ../Qt-Frameless-Window-DarkStyle/darkstyle.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_darkstyle.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\darkstyle.qss" />
+    <None Include="..\resources\fugue\edit-replace.png" />
+    <None Include="..\resources\fugue\edit-signiture.png" />
+    <None Include="..\resources\fugue\gear.png" />
+    <None Include="..\resources\html.def" />
+    <None Include="..\resources\icon.ico" />
+    <None Include="..\resources\icon.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_closed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_end.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_more.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_branch_open.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_disabled.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_checked_pressed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_disabled.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_indeterminate_pressed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_disabled.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_checkbox_unchecked_pressed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_close.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_disabled.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_checked_pressed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_disabled.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_radiobutton_unchecked_pressed.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_restore.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_undock.png" />
+    <None Include="..\Qt-Frameless-Window-DarkStyle\darkstyle\icon_vline.png" />
+    <None Include="..\resources\icons8\icons8-android-os-48.png" />
+    <None Include="..\resources\icons8\icons8-folder-48.png" />
+    <None Include="..\resources\icons8\icons8-gear-48.png" />
+    <None Include="..\resources\icons8\icons8-hammer-48.png" />
+    <None Include="..\resources\icons8\icons8-software-installer-48.png" />
+    <None Include="..\resources\java.def" />
+    <None Include="..\resources\light.qss" />
+    <None Include="..\resources\light.theme" />
+    <None Include="..\resources\numbers.def" />
+    <None Include="..\resources\properties.def" />
+    <None Include="..\resources\smali.def" />
+    <None Include="..\resources\splash.png" />
+    <None Include="..\resources\strings.def" />
+    <None Include="..\resources\xml.def" />
+    <None Include="..\resources\yaml.def" />
+    <None Include="..\resources\yml.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\GitHub\apkstudio\build\ApkStudio_resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

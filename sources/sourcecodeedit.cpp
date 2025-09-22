@@ -388,7 +388,7 @@ void SourceCodeEdit::open(const QString &path)
 void SourceCodeEdit::paintEvent(QPaintEvent *event)
 {
     QPainter line(viewport());
-    const int offset = static_cast<int>((fontMetrics().width('8') * 80)
+    const int offset = static_cast<int>((fontMetrics().horizontalAdvance('8') * 80)
                                         + contentOffset().x()
                                         + document()->documentMargin());
     QPen pen = line.pen();
@@ -413,7 +413,7 @@ bool SourceCodeEdit::save()
     QFile file(m_FilePath);
     if (file.open(QFile::WriteOnly | QFile::Text)) {
         QTextStream out(&file);
-        out.setCodec("UTF-8");
+        out.setEncoding(QStringConverter::Utf8);
         out.setGenerateByteOrderMark(false);
         out << toPlainText();
         out.flush();
@@ -443,7 +443,7 @@ void SourceCodeEdit::transformText(const bool upper)
 void SourceCodeEdit::wheelEvent(QWheelEvent *event)
 {
     if (event->modifiers() & Qt::ControlModifier) {
-        const int delta = event->delta();
+        int delta = event->pixelDelta().y();
         if (delta > 0) {
             zoomIn();
         } else if (delta < 0) {
@@ -462,7 +462,7 @@ SourceCodeSidebarWidget::SourceCodeSidebarWidget(SourceCodeEdit *edit)
 void SourceCodeSidebarWidget::leaveEvent(QEvent *e)
 {
     Q_UNUSED(e)
-    QMouseEvent copy(QEvent::MouseMove, QPoint(-1, -1), Qt::NoButton, nullptr, nullptr);
+    QMouseEvent copy(QEvent::MouseMove, QPoint(-1, -1), QPoint(-1, -1), QPoint(-1, -1), Qt::NoButton, Qt::NoButton, Qt::NoModifier);
     mouseEvent(&copy);
 }
 
@@ -535,7 +535,7 @@ QSize SourceCodeSidebarWidget::sizeHint() const
     }
     digits++;
     digits++;
-    return QSize((3 + (m_Edit->fontMetrics().width('8') * digits)), 0);
+    return QSize((3 + (m_Edit->fontMetrics().horizontalAdvance('8') * digits)), 0);
 }
 
 void SourceCodeSidebarWidget::wheelEvent(QWheelEvent *e)

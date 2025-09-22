@@ -126,3 +126,7 @@ DEFINES += GIT_BRANCH=\\\"$$GIT_BRANCH\\\" \
         QMAKE_POST_LINK += /usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $${VERSION}\" $${INFO_PLIST_PATH}
     }
 }
+
+win32-msvc {
+    QMAKE_LFLAGS += /STACK:20000000
+}

@@ -114,8 +114,8 @@ MainWindow::MainWindow(const QMap<QString, QString> &versions, QWidget *parent)
                         this,
                         tr("Requirements"),
                         tr("One or more required 3rd-party binaries are missing. Please review settings first. (%1)").arg(missingBinary),
-                        tr("Settings"),
-                        tr("Cancel"));
+                        QMessageBox::Ok,
+                        QMessageBox::Cancel);
             if (btn == 0) {
                 (new SettingsDialog(1, this))->exec();
             }
@@ -184,7 +184,7 @@ QDockWidget *MainWindow::buildConsoleDock()
     m_EditConsole->setFrameStyle(QFrame::NoFrame);
     m_EditConsole->setPalette(palette);
     m_EditConsole->setReadOnly(true);
-    m_EditConsole->setTabStopWidth(4 * metrics.width('8'));
+    m_EditConsole->setTabStopDistance(4 * metrics.horizontalAdvance('8'));
     m_EditConsole->setWordWrapMode(QTextOption::NoWrap);
     connect(ProcessOutput::instance(), &ProcessOutput::outputLog, this, &MainWindow::handleOutputLog);
     connect(ProcessOutput::instance(), &ProcessOutput::progress, this, &MainWindow::handleProgress);
@@ -237,43 +237,43 @@ QMenuBar *MainWindow::buildMenuBar()
     auto menubar = new QMenuBar(this);
     auto file = menubar->addMenu(tr("File"));
     auto open = file->addMenu(tr("Open"));
-    open->addAction(tr("APK"), this, &MainWindow::handleActionApk, QKeySequence::New);
-    open->addAction(tr("Folder"), this, &MainWindow::handleActionFolder, QKeySequence::Open);
+    open->addAction(tr("APK"), QKeySequence::New, this, &MainWindow::handleActionApk);
+    open->addAction(tr("Folder"), QKeySequence::Open, this, &MainWindow::handleActionFolder);
     open->addSeparator();
     open->addAction(tr("File"), this, &MainWindow::handleActionFile);
     file->addSeparator();
-    m_ActionClose = file->addAction(tr("Close"), this, &MainWindow::handleActionClose, QKeySequence::Close);
+    m_ActionClose = file->addAction(tr("Close"), QKeySequence::Close, this, &MainWindow::handleActionClose);
     m_ActionClose->setEnabled(false);
     m_ActionCloseAll = file->addAction(tr("Close All"), this, &MainWindow::handleActionCloseAll);
     m_ActionCloseAll->setEnabled(false);
     file->addSeparator();
-    m_ActionSave = file->addAction(tr("Save"), this, &MainWindow::handleActionSave, QKeySequence::Save);
+    m_ActionSave = file->addAction(tr("Save"), QKeySequence::Save, this, &MainWindow::handleActionSave);
     m_ActionSave->setEnabled(false);
     m_ActionSaveAll = file->addAction(tr("Save All"), this, &MainWindow::handleActionSaveAll);
     m_ActionSaveAll->setEnabled(false);
     file->addSeparator();
-    file->addAction(tr("Quit"), this, &MainWindow::handleActionQuit, QKeySequence::Quit);
+    file->addAction(tr("Quit"), QKeySequence::Quit, this, &MainWindow::handleActionQuit);
     auto edit = menubar->addMenu(tr("Edit"));
-    m_ActionUndo = edit->addAction(tr("Undo"), this, &MainWindow::handleActionUndo, QKeySequence::Undo);
+    m_ActionUndo = edit->addAction(tr("Undo"), QKeySequence::Undo, this, &MainWindow::handleActionUndo);
     m_ActionUndo->setEnabled(false);
-    m_ActionRedo = edit->addAction(tr("Redo"), this, &MainWindow::handleActionRedo, QKeySequence::Redo);
+    m_ActionRedo = edit->addAction(tr("Redo"), QKeySequence::Redo, this, &MainWindow::handleActionRedo);
     m_ActionRedo->setEnabled(false);
     edit->addSeparator();
-    m_ActionCut = edit->addAction(tr("Cut"), this, &MainWindow::handleActionCut, QKeySequence::Cut);
+    m_ActionCut = edit->addAction(tr("Cut"), QKeySequence::Cut, this, &MainWindow::handleActionCut);
     m_ActionCut->setEnabled(false);
-    m_ActionCopy = edit->addAction(tr("Copy"), this, &MainWindow::handleActionCopy, QKeySequence::Copy);
+    m_ActionCopy = edit->addAction(tr("Copy"), QKeySequence::Copy, this, &MainWindow::handleActionCopy);
     m_ActionCopy->setEnabled(false);
-    m_ActionPaste = edit->addAction(tr("Paste"), this, &MainWindow::handleActionPaste, QKeySequence::Paste);
+    m_ActionPaste = edit->addAction(tr("Paste"), QKeySequence::Paste, this, &MainWindow::handleActionPaste);
     m_ActionPaste->setEnabled(false);
     edit->addSeparator();
-    m_ActionFind = edit->addAction(tr("Find"), this, &MainWindow::handleActionFind, QKeySequence::Find);
+    m_ActionFind = edit->addAction(tr("Find"), QKeySequence::Find, this, &MainWindow::handleActionFind);
     m_ActionFind->setEnabled(false);
-    m_ActionReplace = edit->addAction(tr("Replace"), this, &MainWindow::handleActionReplace, QKeySequence::Replace);
+    m_ActionReplace = edit->addAction(tr("Replace"), QKeySequence::Replace, this, &MainWindow::handleActionReplace);
     m_ActionReplace->setEnabled(false);
     m_ActionGoto = edit->addAction(tr("Go To"), this, &MainWindow::handleActionGoto);
     m_ActionGoto->setEnabled(false);
     edit->addSeparator();
-    edit->addAction(tr("Settings"), this, &MainWindow::handleActionSettings, QKeySequence::Preferences);
+    edit->addAction(tr("Settings"), QKeySequence::Preferences, this, &MainWindow::handleActionSettings);
     auto view = menubar->addMenu(tr("View"));
     m_ActionViewProject = view->addAction(tr("Project"));
     m_ActionViewProject->setCheckable(true);
