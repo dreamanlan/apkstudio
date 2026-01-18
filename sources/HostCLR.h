@@ -4,8 +4,8 @@
 class QString;
 extern void add_log(const QString& msg);
 extern void printf_log(const char* fmt, ...);
-extern int load_hostfxr();
-extern int load_dotnet_method();
+extern int load_hostfxr(int& out_rc);
+extern int load_dotnet_method(int& out_rc);
 
 typedef void (CORECLR_DELEGATE_CALLTYPE* init_csharp_fn)(const char* base_path, void* result);
 typedef int (CORECLR_DELEGATE_CALLTYPE* decompile_apk_fn)(const char* apk, const char* folder, bool java, bool res, bool smali, void* worker, void* result);

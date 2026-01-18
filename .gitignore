@@ -53,3 +53,5 @@ build/.qmake.stash
 /DotnetApp/.vs
 /DotnetApp/obj
 /build/.vs
+*.obj
+/build/debug
