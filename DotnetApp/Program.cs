@@ -622,6 +622,7 @@ namespace DotNetLib
             get {
                 if (null == s_Calculator) {
                     s_Calculator = new DotnetStoryScript.DslExpression.DslCalculator();
+                    s_Calculator.OnLog += (msg) => { LogNoLock(msg); };
                     s_Calculator.Init();
                     RegisterDslScriptApi(s_Calculator);
                 }
