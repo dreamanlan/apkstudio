@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(OutDir)BatchCommand.exe $(OutDir)copy.dsl bat" />
+    <Exec Command="$(ProjectDir)copytool\BatchCommand.exe $(ProjectDir)copytool\copy.dsl bat" />
   </Target>
 
 </Project>
