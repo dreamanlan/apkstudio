@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
@@ -7,7 +8,7 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.IO;
 using ScriptableFramework;
-using DotnetStoryScript;
+using DotnetStoryScript.DslExpression;
 
 public static class Program
 {
@@ -77,9 +78,9 @@ public delegate int HostGetJavaHeapDelegation();
 
 namespace DotNetLib
 {
-    sealed class OutpuLogExp : DotnetStoryScript.DslExpression.SimpleExpressionBase
+    sealed class OutpuLogExp : SimpleExpressionBase
     {
-        protected override BoxedValue OnCalc(IList<BoxedValue> operands)
+        protected override BoxedValue OnCalc(DslCalculator calculator, IList<BoxedValue> operands)
         {
             string fmt = string.Empty;
             var al = new System.Collections.ArrayList();
@@ -99,7 +100,7 @@ namespace DotNetLib
     }
     sealed class WriteFileExp : DotnetStoryScript.DslExpression.SimpleExpressionBase
     {
-        protected override BoxedValue OnCalc(IList<BoxedValue> operands)
+        protected override BoxedValue OnCalc(DslCalculator calculator, IList<BoxedValue> operands)
         {
             bool r = false;
             if (operands.Count >= 2) {
@@ -363,9 +364,9 @@ namespace DotNetLib
                     s_NativeApi.Result = result;
 
                     TryLoadDSL();
-                    Calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
-                    Calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
-                    BoxedValue r = Calculator.Calc("init");
+                    calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
+                    calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
+                    BoxedValue r = calculator.Calc("init");
                 }
             }
             catch (Exception e) {
@@ -384,16 +385,16 @@ namespace DotNetLib
                         s_NativeApi.Result = result;
 
                         TryLoadDSL();
-                        Calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
-                        Calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
-                        Calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
-                        Calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
-                        var args = Calculator.NewCalculatorValueList();
+                        calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
+                        calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
+                        calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
+                        calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
+                        var args = calculator.NewCalculatorValueList();
                         args.Add(BoxedValue.FromBool(java));
                         args.Add(BoxedValue.FromBool(res));
                         args.Add(BoxedValue.FromBool(smali));
-                        BoxedValue r = Calculator.Calc("decompileapk", args);
-                        Calculator.RecycleCalculatorValueList(args);
+                        BoxedValue r = calculator.Calc("decompileapk", args);
+                        calculator.RecycleCalculatorValueList(args);
                         if (r.IsInteger) {
                             return r.GetInt();
                         }
@@ -420,14 +421,14 @@ namespace DotNetLib
                         }
 
                         TryLoadDSL();
-                        Calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
-                        Calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
-                        Calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
-                        var args = Calculator.NewCalculatorValueList();
+                        calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
+                        calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
+                        calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
+                        var args = calculator.NewCalculatorValueList();
                         args.Add(BoxedValue.FromString(sourceApkPath));
                         args.Add(BoxedValue.FromString(targetApkPath));
-                        BoxedValue r = Calculator.Calc("recompileapk", args);
-                        Calculator.RecycleCalculatorValueList(args);
+                        BoxedValue r = calculator.Calc("recompileapk", args);
+                        calculator.RecycleCalculatorValueList(args);
                         if (r.IsInteger) {
                             return r.GetInt();
                         }
@@ -452,18 +453,18 @@ namespace DotNetLib
                         string target = GetTargetApkPath(apk);
 
                         TryLoadDSL();
-                        Calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
-                        Calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
-                        Calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
-                        var args = Calculator.NewCalculatorValueList();
+                        calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
+                        calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
+                        calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
+                        var args = calculator.NewCalculatorValueList();
                         args.Add(BoxedValue.FromString(key));
                         args.Add(BoxedValue.FromString(keypwd));
                         args.Add(BoxedValue.FromString(alias));
                         args.Add(BoxedValue.FromString(aliaspwd));
                         args.Add(BoxedValue.FromBool(zipalign));
                         args.Add(BoxedValue.FromString(target));
-                        BoxedValue r = Calculator.Calc("signapk", args);
-                        Calculator.RecycleCalculatorValueList(args);
+                        BoxedValue r = calculator.Calc("signapk", args);
+                        calculator.RecycleCalculatorValueList(args);
                         if (r.IsInteger) {
                             return r.GetInt();
                         }
@@ -486,10 +487,10 @@ namespace DotNetLib
                         s_NativeApi.Result = result;
 
                         TryLoadDSL();
-                        Calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
-                        Calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
-                        Calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
-                        BoxedValue r = Calculator.Calc("installapk");
+                        calculator.SetGlobalVariable("nativeapi", BoxedValue.FromObject(s_NativeApi));
+                        calculator.SetGlobalVariable("basepath", BoxedValue.FromString(s_BasePath));
+                        calculator.SetGlobalVariable("apk", BoxedValue.FromString(apk));
+                        BoxedValue r = calculator.Calc("installapk");
                         if (r.IsInteger) {
                             return r.GetInt();
                         }
@@ -512,12 +513,12 @@ namespace DotNetLib
                     LogNoLock(string.Format("[csharp] Call dsl script, source:{0} target:{1}", sourceApkPath, targetApkPath));
 
                     TryLoadDSL();
-                    Calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
-                    var sargs = Calculator.NewCalculatorValueList();
+                    calculator.SetGlobalVariable("folder", BoxedValue.FromString(folder));
+                    var sargs = calculator.NewCalculatorValueList();
                     sargs.Add(BoxedValue.FromString(sourceApkPath));
                     sargs.Add(BoxedValue.FromString(targetApkPath));
-                    BoxedValue r = Calculator.Calc("get_zipalign_args", sargs);
-                    Calculator.RecycleCalculatorValueList(sargs);
+                    BoxedValue r = calculator.Calc("get_zipalign_args", sargs);
+                    calculator.RecycleCalculatorValueList(sargs);
 
                     args.Clear();
                     if (r.IsString) {
@@ -603,7 +604,7 @@ namespace DotNetLib
             if (fi.Exists) {
                 if (fi.LastWriteTime != s_DslScriptTime) {
                     s_DslScriptTime = fi.LastWriteTime;
-                    Calculator.LoadDsl(fi.FullName);
+                    calculator.LoadDsl(fi.FullName);
 
                     LogNoLock("[csharp] Load dsl script: " + fi.FullName);
                 }
@@ -617,12 +618,12 @@ namespace DotNetLib
             calculator.Register("outputlog", "outputlog(fmt, ...)", new DotnetStoryScript.DslExpression.ExpressionFactoryHelper<OutpuLogExp>());
             calculator.Register("writefile", "writefile(path, txt)", new DotnetStoryScript.DslExpression.ExpressionFactoryHelper<WriteFileExp>());
         }
-        private static DotnetStoryScript.DslExpression.DslCalculator Calculator
+        private static DotnetStoryScript.DslExpression.DslCalculator calculator
         {
             get {
                 if (null == s_Calculator) {
                     s_Calculator = new DotnetStoryScript.DslExpression.DslCalculator();
-                    s_Calculator.OnLog += (msg) => { LogNoLock(msg); };
+                    s_Calculator.CodeStructure.OnLog += (msg) => { LogNoLock(msg); };
                     s_Calculator.NewApiRegistry();
                     RegisterDslScriptApi(s_Calculator);
                 }

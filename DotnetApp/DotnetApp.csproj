@@ -8,6 +8,10 @@
     <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(ProjectDir)copytool\BatchCommand.exe $(ProjectDir)copytool\copy.dsl bat" />
+  </Target>
+
   <ItemGroup>
     <Reference Include="Common">
       <HintPath>deps\Common.dll</HintPath>
@@ -25,9 +29,5 @@
       <HintPath>deps\ScriptFrameworkLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(ProjectDir)copytool\BatchCommand.exe $(ProjectDir)copytool\copy.dsl bat" />
-  </Target>
 
 </Project>
