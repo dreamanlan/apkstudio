@@ -1,17 +1,17 @@
 script(main)
 {
-	curdir = getscriptdir();
+	curdir = get_script_directory();
 	cd(curdir);
-	fileecho(true);
+	file_echo(true);
 	
-	copyfiles(".", "../../../../build/managed","DotnetApp.*");
-	copyfiles(".", "../../../../build/managed","Common.*");
-	copyfiles(".", "../../../../build/managed","DotnetStoryScript.*");
-	copyfiles(".", "../../../../build/managed","Dsl.*");
-	copyfiles(".", "../../../../build/managed","LitJson.*");
-	copyfiles(".", "../../../../build/managed","ScriptFrameworkLibrary.*");
+	copy_files(".", "../../../../build/managed","DotnetApp.*");
+	copy_files(".", "../../../../build/managed","Common.*");
+	copy_files(".", "../../../../build/managed","DotnetStoryScript.*");
+	copy_files(".", "../../../../build/managed","Dsl.*");
+	copy_files(".", "../../../../build/managed","LitJson.*");
+	copy_files(".", "../../../../build/managed","ScriptFrameworkLibrary.*");
 	
-	if (argnum() <= 1) {
+	if (arg_num() <= 1) {
 		echo("press any key ...");
 		read();
 	};
